@@ -45,9 +45,9 @@ warn_level = 0.2
 watering_delay = 60
 wet_point = 3
 
-last_water_row = cursor.execute("SELECT * FROM water_freq ORDER BY id DESC LIMIT 1").fetchall()
-last_dose = last_water_row[0].time()
-
+last_water_row = cursor.execute("SELECT * FROM water_freq ORDER BY id DESC LIMIT 1;").fetchall()
+last_dose = last_water_row[1]
+time = time.datetime.now()
 
 
 def water(channel, dose_speed, dose_time, last_dose):
